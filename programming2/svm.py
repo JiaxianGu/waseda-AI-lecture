@@ -20,7 +20,7 @@ def load_dataset(path):
 #   (see the lecture slide for the definition of the linear kernel)
 def linear_kernel(x, y):
     # TODO: IMPLEMENT ME
-    pass
+    return np.dot(x,y.T)
 
 
 # Implement the polynominal kernel for a bunch of data
@@ -33,7 +33,7 @@ def linear_kernel(x, y):
 #   (see the lecture slide for the definition of the polynominal kernel)
 def polynominal_kernel(x, y, d, c):
     # TODO: IMPLEMENT ME
-    pass
+    return (np.dot(x, y.T) +c) ** d
 
 # Implement the RBF kernel for a bunch of data
 # x: nd.array with shape (n1_samples, m_features)
@@ -67,7 +67,7 @@ if __name__ == '__main__':
         acc = (X_test_predict == y_test).sum() / y_test.shape[0]
         return acc
 
-    for k1, k2 in [('linear', linear_kernel),
+    for k1, k2 in [('linear', linear_kernel()),
                    ('poly', lambda x, y: polynominal_kernel(x, y, degree, coef0)),
                    ('rbf', lambda x, y: rbf_kernel(x, y, gamma))]:
         acc1 = eval_kernel(k1)
