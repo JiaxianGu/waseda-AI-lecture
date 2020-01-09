@@ -7,6 +7,8 @@ import numpy as np
 # Output
 #   Y: np.ndarray with shape [M, N] s.t. Y[i,j] = sigmoid(X[i,j])
 def sigmoid(X):
+    Y = X
+    
     # TODO: IMPLEMENT ME
     pass
 
